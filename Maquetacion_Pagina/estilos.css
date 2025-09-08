@@ -7,7 +7,6 @@
     --fondo-principal: #e6e4e4;
     --fondo-header: #000000;
     --fondo-sidebar: #000000;
-    --fondo-main: #e72c2c;
     --fondo-footer: #2d4bd3;
     --alto-header: 100px;
     --alto-footer: 100px;
@@ -31,7 +30,7 @@ header {
     justify-content: center;
     align-items: center;
     background-color: var(--fondo-header);
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
 }
 .contenido-header__imagen-logo{
     width: 200px;
@@ -47,6 +46,7 @@ header {
     margin-left: 20px;
     list-style: none;
     font-size: 20px;
+    font-style: italic;
 }
 header div {
     display: flex;
@@ -62,20 +62,66 @@ aside {
     grid-area: sidebar;
     width: var(--ancho-sidebar);
     background-color: var(--fondo-sidebar);
+    padding: 10px;
+    border-right: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .sidebar-navegacion{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
     justify-content: center;
 }
 .sidebar-navegacion .sidebar-navegacion__enlaces{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
 }
+.sidebar-navegacion__imagen-twitter{
+    margin-top: 80px;
+    height: 40px;
+}
+.sidebar-navegacion__imagen-instagram{
+    height: 40px;
+    margin-top: 20px;
+}
+.sidebar-navegacion__imagen-facebook{
+    height: 40px;
+    margin-top: 20px;
+}
+/* CONTENIDO DEL TEMA */
 main {
-    background-color: var(--fondo-main);
     grid-area: main;
 }
+.titulo-auto{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 50px;
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+.contenedor-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    height: 400px;
+    width: 1300px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.contenedor-cards__cards {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 footer {
     background-color: var(--fondo-footer);
     grid-area: footer;
