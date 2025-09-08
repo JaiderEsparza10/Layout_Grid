@@ -7,7 +7,8 @@
     --fondo-principal: #e6e4e4;
     --fondo-header: #000000;
     --fondo-sidebar: #000000;
-    --fondo-footer: #2d4bd3;
+    --fondo-footer: #000000;
+    --fondo-main: #727272;
     --alto-header: 100px;
     --alto-footer: 100px;
     --ancho-sidebar: 200px;
@@ -95,10 +96,11 @@ aside {
 }
 /* CONTENIDO DEL TEMA */
 main {
+    background-color: var(--fondo-main);
     grid-area: main;
 }
 .titulo-auto{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-align: center;
     margin-top: 50px;
     font-size: 60px;
@@ -114,15 +116,20 @@ main {
     margin: 0 auto;
     margin-top: 40px;
 }
-
 .contenedor-cards__cards {
+    background-color: white;
     border: 1px solid #000000;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.cards__imagen-cards{
+    height: 100px;
+}
+/* PIE DE PAGINA */
 footer {
     background-color: var(--fondo-footer);
     grid-area: footer;
+    border-top: 1px solid white;
 }
