@@ -5,8 +5,8 @@
 }
 :root {
     --fondo-principal: #e6e4e4;
-    --fondo-header: #edb61e;
-    --fondo-sidebar: #88720d;
+    --fondo-header: #000000;
+    --fondo-sidebar: #000000;
     --fondo-main: #e72c2c;
     --fondo-footer: #2d4bd3;
     --alto-header: 100px;
@@ -24,11 +24,29 @@ body {
         "footer footer footer";
     height: 100vh;
 }
+/* BARRA DE NAVEGACION, SECCION HEADER */
 header {
     grid-area: header;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--fondo-header);
+    border-bottom: 2px solid white;
+}
+.contenido-header__imagen-logo{
+    width: 200px;
+}
+.contenido-header__imagen-mensaje{
+    height: 20px;
+    margin-top: 50px;
+    padding-right: 50px;
+}
+.lista-enlaces__enlace{
+    color: white;
+    margin-top: 50px;
+    margin-left: 20px;
+    list-style: none;
+    font-size: 20px;
 }
 header div {
     display: flex;
@@ -39,10 +57,20 @@ header div nav ul {
     display: flex;
     gap: 10px;
 }
+/* CONTENIDO SIDEBAR */
 aside {
     grid-area: sidebar;
     width: var(--ancho-sidebar);
     background-color: var(--fondo-sidebar);
+}
+.sidebar-navegacion{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-navegacion .sidebar-navegacion__enlaces{
 }
 main {
     background-color: var(--fondo-main);
