@@ -1,160 +1,200 @@
+/* Esto es un reinicio básico para que la página se vea igual en todos los navegadores */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Quita los espacios de los bordes de todos los elementos */
+    padding: 0; /* Quita los espacios internos de todos los elementos */
+    box-sizing: border-box; /* Ayuda a que el tamaño de los elementos sea más predecible */
 }
+
+/* Aquí guardamos los colores y tamaños principales para usarlos más adelante */
 :root {
-    --fondo-principal: #e6e4e4;
-    --fondo-header: #000000;
-    --fondo-sidebar: #000000;
-    --fondo-footer: #000000;
-    --fondo-main: #727272;
-    --alto-header: 100px;
-    --alto-footer: 100px;
-    --ancho-sidebar: 200px;
+    --fondo-principal: #e6e4e4; /* Un gris claro para el fondo general */
+    --fondo-header: #000000; /* Negro para la parte de arriba */
+    --fondo-sidebar: #000000; /* Negro para la barra lateral */
+    --fondo-footer: #000000; /* Negro para la parte de abajo */
+    --fondo-main: #727272; /* Un gris oscuro para el contenido principal */
+    --alto-header: 100px; /* La altura de la parte de arriba */
+    --alto-footer: 100px; /* La altura de la parte de abajo */
+    --ancho-sidebar: 200px; /* El ancho de la barra lateral */
 }
+
+/* Configuramos el cuerpo de la página, el "lienzo" principal */
 body {
-    background-color: var(--fondo-principal);
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr;
-    grid-template-rows: 100px auto 100px;
+    background-color: var(--fondo-principal); /* Le ponemos el color de fondo que definimos arriba */
+    display: grid; /* Usamos "grid" para organizar la página en una cuadrícula */
+    grid-template-columns: 200px 1fr 1fr; /* Dividimos la página en 3 columnas */
+    grid-template-rows: 100px auto 100px; /* La dividimos en 3 filas */
+    /* Aquí le damos un nombre a cada sección de la cuadrícula */
     grid-template-areas:
-        "header header header"
-        "sidebar main   main"
-        "footer footer footer";
-    height: 100vh;
+        "header header header" /* La fila de arriba es para el encabezado */
+        "sidebar main   main"  /* La del medio tiene la barra lateral y el contenido */
+        "footer footer footer"; /* Y la de abajo es para el pie de página */
+    height: 100vh; /* Hacemos que la página ocupe toda la pantalla verticalmente */
 }
-/* BARRA DE NAVEGACION, SECCION HEADER */
+
+/* Estilos de la barra de navegación, la sección de arriba */
 header {
-    grid-area: header;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--fondo-header);
-    border-bottom: 1px solid white;
+    grid-area: header; /* Le decimos que esta sección es el "header" que nombramos antes */
+    display: flex; /* Usamos flexbox para alinear su contenido */
+    justify-content: center; /* Centramos el contenido horizontalmente */
+    align-items: center; /* Centramos el contenido verticalmente */
+    background-color: var(--fondo-header); /* Le ponemos el color negro */
+    border-bottom: 1px solid white; /* Le ponemos una línea blanca abajo */
 }
+
+/* Estilos de las imágenes y enlaces dentro del encabezado */
 .contenido-header__imagen-logo{
-    width: 200px;
+    width: 200px; /* El ancho del logo */
 }
 .contenido-header__imagen-mensaje{
-    height: 20px;
-    margin-top: 50px;
-    padding-right: 50px;
+    height: 20px; /* La altura de la imagen del mensaje */
+    margin-top: 50px; /* Un espacio arriba */
+    padding-right: 50px; /* Un espacio a la derecha */
 }
 .lista-enlaces__enlace{
-    color: white;
-    margin-top: 50px;
-    margin-left: 20px;
-    list-style: none;
-    font-size: 20px;
-    font-style: italic;
+    color: white; /* El color del texto de los enlaces es blanco */
+    margin-top: 50px; /* Espacio arriba */
+    margin-left: 20px; /* Espacio a la izquierda */
+    list-style: none; /* Quitamos los puntos de la lista */
+    font-size: 20px; /* Tamaño de la letra */
+    font-style: italic; /* La letra es cursiva */
 }
+/* Estilos para el contenedor de la barra de navegación */
 header div {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    display: flex; /* Usamos flexbox para alinear */
+    justify-content: space-between; /* Deja un espacio igual entre los elementos */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 header div nav ul {
-    display: flex;
-    gap: 10px;
+    display: flex; /* Usamos flexbox */
+    gap: 10px; /* Deja un espacio de 10px entre los elementos */
 }
-/* CONTENIDO SIDEBAR */
+
+/* Estilos para la barra lateral (SIDEBAR) */
 aside {
-    grid-area: sidebar;
-    width: var(--ancho-sidebar);
-    background-color: var(--fondo-sidebar);
-    padding: 10px;
-    border-right: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-area: sidebar; /* Se ubica en el área que llamamos "sidebar" */
+    width: var(--ancho-sidebar); /* Su ancho es de 200px, el valor que guardamos */
+    background-color: var(--fondo-sidebar); /* Color de fondo negro */
+    padding: 10px; /* Un pequeño espacio interno */
+    border-right: 1px solid white; /* Una línea blanca al lado derecho */
+    display: flex; /* Usa flexbox para alinear su contenido */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
 }
+
+/* Estilos para los enlaces dentro de la barra lateral */
 .sidebar-navegacion{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza los elementos en columna */
+    gap: 40px; /* Espacio entre cada elemento */
+    align-items: center; /* Centra los elementos */
+    justify-content: center; /* Centra los elementos */
 }
 .sidebar-navegacion .sidebar-navegacion__enlaces{
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
+    color: white; /* Color de texto blanco */
+    text-decoration: none; /* Quita la línea de abajo de los enlaces */
+    font-size: 15px; /* Tamaño de la letra */
 }
+/* Estilos para las imágenes de redes sociales en la barra lateral */
 .sidebar-navegacion__imagen-twitter{
-    margin-top: 80px;
-    height: 40px;
+    margin-top: 80px; /* Espacio grande arriba */
+    height: 40px; /* Altura de la imagen */
 }
 .sidebar-navegacion__imagen-instagram{
-    height: 40px;
-    margin-top: 20px;
+    height: 40px; /* Altura de la imagen */
+    margin-top: 20px; /* Espacio arriba */
 }
 .sidebar-navegacion__imagen-facebook{
-    height: 40px;
-    margin-top: 20px;
+    height: 40px; /* Altura de la imagen */
+    margin-top: 20px; /* Espacio arriba */
 }
-/* CONTENIDO DEL TEMA */
+
+/* Estilos para la parte del contenido principal */
 main {
-    background-color: var(--fondo-main);
-    grid-area: main;
+    background-color: var(--fondo-main); /* Color de fondo gris oscuro */
+    grid-area: main; /* Se ubica en el área que llamamos "main" */
 }
+
+/* Estilos para el título de la página */
 .titulo-auto{
-    color: rgb(0, 0, 0);
-    text-align: center;
-    margin-top: 50px;
-    font-size: 60px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
+    color: rgb(0, 0, 0); /* Color de texto negro */
+    text-align: center; /* Centra el texto */
+    margin-top: 50px; /* Espacio arriba */
+    font-size: 60px; /* Tamaño grande de la letra */
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
+    font-style: italic; /* Letra cursiva */
 }
+
+/* Estilos para el contenedor de las tarjetas o "cards" */
 .contenedor-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px; 
-    height: 400px;
-    width: 1300px;
-    margin: 0 auto;
-    margin-top: 40px;
-    overflow-y: auto;
+    display: grid; /* Usamos grid para organizar las tarjetas */
+    grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas iguales */
+    gap: 20px; /* Espacio entre las tarjetas */
+    height: 400px; /* La altura de este contenedor */
+    width: 1300px; /* El ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin-top: 40px; /* Espacio arriba */
+    overflow-y: auto; /* Permite que aparezca una barra de desplazamiento vertical si el contenido es muy largo */
 }
+
+/* Estilos para cada tarjeta individual */
 .contenedor-cards__cards {
-    background-color: white;
-    border: 1px solid #000000;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #000000; /* Un borde negro delgado */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espacio interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Una sombra ligera para que se vea con relieve */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Los elementos dentro se organizan en columna */
+    align-items: center; /* Centra los elementos */
+    gap: 20px; /* Espacio entre los elementos de la tarjeta */
 }
 
+/* Estilos para las imágenes de las tarjetas */
 .cards__imagen-cards{
-    height: 100px;
-    width: 150px;
+    height: 100px; /* Altura de la imagen */
+    width: 150px; /* Ancho de la imagen */
 }
 
+/* Estilos para los textos dentro de las tarjetas */
 .contenedor-cards__cards h3{
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: black;
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
+    font-style: italic; /* Letra cursiva */
+    color: black; /* Color de texto negro */
 }
-
 .contenedor-cards__cards p{
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; /* Tipo de letra */
+    color: black; /* Color de texto negro */
+    text-align: center; /* Centra el texto */
+}
+.contenedor-cards__cards span{
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
+    font-style: italic; /* Letra cursiva */
+    color: red; /* Color de texto rojo */
+    font-size: 30px; /* Tamaño de la letra */
 }
 
-.contenedor-cards__cards span{
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: red;
-    font-size: 30px;
-}
-/* PIE DE PAGINA */
+/* Estilos para la parte de abajo de la página, el pie de página */
 footer {
-    background-color: var(--fondo-footer);
-    grid-area: footer;
-    border-top: 1px solid white;
+    background-color: var(--fondo-footer); /* Color de fondo negro */
+    grid-area: footer; /* Se ubica en el área "footer" */
+    border-top: 1px solid white; /* Línea blanca en la parte de arriba */
+}
+
+/* Estilos para los títulos y subtítulos del pie de página */
+footer h2{
+    color: white; /* Color de texto blanco */
+    text-align: center; /* Centra el texto */
+    margin-top: 30px; /* Espacio arriba */
+    font-size: 20px; /* Tamaño de la letra */
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
+    font-style: italic; /* Letra cursiva */
+}
+footer h3{
+    color: white; /* Color de texto blanco */
+    text-align: center; /* Centra el texto */
+    margin-top: 10px; /* Espacio arriba */
+    font-size: 15px; /* Tamaño de la letra */
+    font-family: 'Times New Roman', Times, serif; /* Tipo de letra */
+    font-style: italic; /* Letra cursiva */
 }
